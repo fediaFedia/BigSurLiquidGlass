@@ -1,4 +1,4 @@
-# BigSurLiquidGlass
+Liquid Glass for BigSur 26 RC2
 Repo for the Liquid Glass Wallpaper Helper for Rainmeter
 
 So what does it do?
