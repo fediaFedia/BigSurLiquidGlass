@@ -1,4 +1,7 @@
 Liquid Glass for BigSur 26 RC2
+=======================
+![Preview](https://github.com/fediaFedia/BigSurLiquidGlass/blob/main/preview.png)
+
 Repo for the Liquid Glass Wallpaper Helper for Rainmeter
 
 So what does it do?
