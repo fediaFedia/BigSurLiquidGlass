@@ -52,7 +52,6 @@ def get_screen_resolution():
     user32 = ctypes.windll.user32
     return user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)  # width, height
 
-# Ill finish this later 
 def get_rocketdock_blur_region(padding=3):
     try:
         # Read main RocketDock registry values
@@ -165,11 +164,8 @@ def parse_rainmeter_ini(ini_path, padding=0, dpi=1):
 
     variables = get_screen_metrics()
     section_pattern = re.compile(r'\[\s*([^\]]+?)\s*\](.*?)((?=\n\[)|\Z)', re.S | re.M | re.I)
-    
-    #Feel free to uncomment these, it will blur the RocketDock area and a fake menubar at the top if you got one
     #regions.append(get_rocketdock_blur_region())
     #regions.append((0,0,1920,30))
-    
     for match in section_pattern.finditer(content):
         section_name, body, _ = match.groups()
 
@@ -192,12 +188,9 @@ def parse_rainmeter_ini(ini_path, padding=0, dpi=1):
 
         x_expr = windowx_match.group(1).strip()
         y_expr = windowy_match.group(1).strip()
-        # padding = ((10 - padding) * int(dpi))
-        # padding = 10
-        # This is still problematic, doesn't align perfectly on any dpi other than 1
-        
-        x = ((10 - padding) * int(dpi)) + safe_eval(x_expr, variables)
-        y = ((10 - padding) * int(dpi)) + safe_eval(y_expr, variables)
+        padding = ((10 - padding) * int(dpi))
+        x = safe_eval(x_expr, variables) + padding 
+        y = safe_eval(y_expr, variables) + padding
         if re.search(r'widget', section_name, re.I):
             w, h = size_by_active[active]
         if re.search(r'MultiDouble', section_name, re.I):
@@ -348,19 +341,20 @@ def ensure_original_wallpaper():
     
 def main():
     parser = argparse.ArgumentParser(description="Blur Rainmeter Widgets/Shortcuts on wallpaper with rounded corners.")
+    parser.add_argument('--ini', type=str, default=r'%AppData%\Rainmeter\Rainmeter.ini', help="Rainmeter ini path")
     parser.add_argument('--padding', type=int, default=10, help="Padding in pixels to adjust blur regions position.")
     parser.add_argument('--blur', type=int, default=15, help="Blur radius.")
     parser.add_argument('--radius', type=int, default=25, help="Corner radius for rounded blur regions.")
     parser.add_argument('--dpi', type=float, default=1, help="Corner radius for rounded blur regions.")
-    parser.add_argument('--path', type=str, default=r'%USERPROFILE%\Documents\Rainmeter\Skins\BirSur\@Resources\Blur\original_wallpaper.jpg', help="Path of the Blur folder for making a backup of the wallpaper")
+    parser.add_argument('--path', type=str, default=r'%USERPROFILE%\Documents\Rainmeter\Skins\BirSur\@Resources\Blur', help="Path of the Blur folder for making a backup of the wallpaper")
     args = parser.parse_args()
 
     wallpaper_path = get_current_wallpaper()
     if not os.path.exists(wallpaper_path):
         print(f"Wallpaper not found at {wallpaper_path}")
         return
-
-    rainmeter_ini = os.path.expandvars(r"%AppData%\Rainmeter\Rainmeter.ini")
+    print(args.ini)
+    rainmeter_ini = os.path.expandvars(args.ini)
     if not os.path.exists(rainmeter_ini):
         print(f"Rainmeter.ini not found at {rainmeter_ini}")
         return
@@ -372,7 +366,8 @@ def main():
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     backup_path = os.path.join(script_dir, "original_wallpaper.jpg")
-    wallpath1 = os.path.expandvars(r'%USERPROFILE%\Documents\Rainmeter\Skins\BigSur\@Resources\Blur') 
+    print(args.path)
+    wallpath1 = os.path.expandvars(args.path) 
     wallpath = os.path.join(wallpath1, os.path.basename(wallpaper_path))
 
 
