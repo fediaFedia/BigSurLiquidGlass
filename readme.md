@@ -1,3 +1,6 @@
+<img width="520" height="515" alt="image" src="https://github.com/user-attachments/assets/a9ebec41-09a2-4341-9de2-8527d62dcd6e" />
+
+
 Well here's my first attempt at making a C# Rainmeter Plugin, so don't be harsh :)
 GitHub link for feedback and updates:
 
