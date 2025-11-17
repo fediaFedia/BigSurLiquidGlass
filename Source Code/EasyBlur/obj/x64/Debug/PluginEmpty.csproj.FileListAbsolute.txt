@@ -1,0 +1,6 @@
+C:\Files\Projects\RainmeterPlugins\PluginEmpty\obj\x64\Debug\PluginEmpty.csproj.AssemblyReference.cache
+C:\Files\Projects\RainmeterPlugins\PluginEmpty\obj\x64\Debug\PluginEmpty.csproj.CoreCompileInputs.cache
+C:\Files\Projects\RainmeterPlugins\PluginEmpty\x64\Debug\Empty.dll
+C:\Files\Projects\RainmeterPlugins\PluginEmpty\x64\Debug\Empty.pdb
+C:\Files\Projects\RainmeterPlugins\PluginEmpty\obj\x64\Debug\Empty.dll
+C:\Files\Projects\RainmeterPlugins\PluginEmpty\obj\x64\Debug\Empty.pdb

@@ -1,0 +1,4 @@
+C:\Files\Projects\RainmeterPlugins\EasyBlur\x64\Release\EasyBlur.dll
+C:\Files\Projects\RainmeterPlugins\EasyBlur\obj\x64\Release\EasyBlur.csproj.AssemblyReference.cache
+C:\Files\Projects\RainmeterPlugins\EasyBlur\obj\x64\Release\EasyBlur.csproj.CoreCompileInputs.cache
+C:\Files\Projects\RainmeterPlugins\EasyBlur\obj\x64\Release\EasyBlur.dll

@@ -1,0 +1,8 @@
+C:\Files\Projects\RainmeterPlugins\EasyBlur\x64\Debug\EasyBlur.dll
+C:\Files\Projects\RainmeterPlugins\EasyBlur\x64\Debug\EasyBlur.pdb
+C:\Files\Projects\RainmeterPlugins\EasyBlur\obj\x64\Debug\EasyBlur.csproj.AssemblyReference.cache
+C:\Files\Projects\RainmeterPlugins\EasyBlur\obj\x64\Debug\EasyBlur.csproj.CoreCompileInputs.cache
+C:\Files\Projects\RainmeterPlugins\EasyBlur\obj\x64\Debug\EasyBlur.dll
+C:\Files\Projects\RainmeterPlugins\EasyBlur\obj\x64\Debug\EasyBlur.pdb
+C:\Users\User\AppData\Roaming\Rainmeter\Plugins\EasyBlur.dll
+C:\Users\User\AppData\Roaming\Rainmeter\Plugins\EasyBlur.pdb
